@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mule-project xmlns="http://www.mulesoft.com/tooling/project" runtimeId="org.mule.tooling.server.3.9.2.ee" schemaVersion="5.3.0.0">
+    <name>hyperloop-tcp-receiver</name>
+    <description></description>
+    <muleExtension name="AMQP-0-9" qualifier="mule-transport-amqp-contribution"/>
+</mule-project>

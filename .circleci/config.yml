@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+    branches:
+      only:
+        - master
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - run: cd hyperloop-tcp-receiver && mvn clean package
+      - run: sudo apt-get update -y && sudo apt-get upgrade -y
+      - run: sudo apt-get install python-pip && sudo pip install awscli
+      - run: cd hyperloop-tcp-receiver/target && aws s3 cp hyperloop-tcp-receiver-1.0.0-SNAPSHOT.zip s3://hyperloopupv/middleware.zip --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
+      - store_artifacts:
+          path: hyperloop-tcp-receiver/target/*.zip

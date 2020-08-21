@@ -1,0 +1,17 @@
+<classpath>
+  <classpathentry kind="src" path="src/main/app" excluding="**/*.java"/>
+  <classpathentry kind="src" path="src/main/java"/>
+  <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
+  <classpathentry kind="src" path="src/test/java" output="target/test-classes"/>
+  <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/com/rabbitmq/amqp-client/3.6.1/amqp-client-3.6.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/javolution/javolution-core-java/6.0.0/javolution-core-java-6.0.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/mule/transports/mule-transport-amqp/3.7.6/mule-transport-amqp-3.7.6.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/osgi/org.osgi.compendium/4.3.1/org.osgi.compendium-4.3.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/osgi/org.osgi.core/4.3.1/org.osgi.core-4.3.1.jar"/>
+  <classpathentry kind="con" path="MULE_RUNTIME"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+</classpath>

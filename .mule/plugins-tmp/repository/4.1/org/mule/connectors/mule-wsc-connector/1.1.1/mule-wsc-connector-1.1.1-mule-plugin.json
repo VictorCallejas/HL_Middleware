@@ -1,0 +1,2687 @@
+{
+  "minMuleVersion": "4.1.0",
+  "extensionModel": {
+    "types": [
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.message.CustomTransportConfiguration"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.message.CustomHttpTransportConfiguration",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.message.CustomHttpTransportConfiguration",
+          "typeAlias": {"value": "http-transport-configuration"}
+        },
+        "type": "Object",
+        "fields": [{
+          "annotations": {
+            "stereotype": {"allowedStereotypes": [{
+              "parent": {
+                "namespace": "MULE",
+                "type": "MODULE_CONFIG"
+              },
+              "namespace": "HTTP",
+              "type": "REQUEST_CONFIG"
+            }]},
+            "expressionSupport": {"value": "SUPPORTED"}
+          },
+          "model": {"type": "String"},
+          "key": {
+            "name": "requesterConfig",
+            "required": "true"
+          }
+        }]
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": [],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.message.CustomTransportConfiguration",
+            "hasDefaultConstructor": false,
+            "isInstantiable": false,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": true,
+            "isAbstract": true,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.message.CustomTransportConfiguration",
+          "typeAlias": {"value": "CustomTransportConfiguration"}
+        },
+        "type": "Object",
+        "fields": []
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.security.SecurityStrategyAdapter"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.security.WssDecryptSecurityStrategy",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.security.WssDecryptSecurityStrategy",
+          "typeAlias": {"value": "WssDecryptSecurityStrategy"}
+        },
+        "type": "Object",
+        "fields": [{
+          "annotations": {"expressionSupport": {"value": "NOT_SUPPORTED"}},
+          "model": {
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": ["org.mule.runtime.extension.api.soap.security.config.WssStoreConfiguration"],
+                "parent": "",
+                "classname": "org.mule.extension.ws.api.security.config.WssKeyStoreConfigurationAdapter",
+                "hasDefaultConstructor": true,
+                "isInstantiable": true,
+                "isFinal": false,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": false,
+                "isMap": false
+              },
+              "typeId": "org.mule.extension.ws.api.security.config.WssKeyStoreConfigurationAdapter",
+              "typeAlias": {"value": "wss-key-store-configuration"}
+            },
+            "type": "Object",
+            "fields": [
+              {
+                "annotations": {
+                  "display": {"displayModel": {"summary": "The alias of the private key to use"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "alias",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password used to access the private key."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "keyPassword"}
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password to access the store."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "password",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "display": {"displayModel": {
+                    "summary": "The location of the KeyStore file",
+                    "pathModel": {
+                      "fileExtensions": [],
+                      "acceptsUrls": false,
+                      "location": "EMBEDDED",
+                      "type": "FILE"
+                    }
+                  }},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "keyStorePath",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "default": "jks",
+                  "display": {"displayModel": {"summary": "The type of store (jks, pkcs12, jceks, or any other)"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "type"}
+              }
+            ]
+          },
+          "key": {
+            "name": "keyStoreConfiguration",
+            "required": "true"
+          }
+        }]
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.security.SecurityStrategyAdapter"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.security.WssEncryptSecurityStrategy",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.security.WssEncryptSecurityStrategy",
+          "typeAlias": {"value": "WssEncryptSecurityStrategy"}
+        },
+        "type": "Object",
+        "fields": [{
+          "annotations": {"expressionSupport": {"value": "NOT_SUPPORTED"}},
+          "model": {
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": ["org.mule.runtime.extension.api.soap.security.config.WssStoreConfiguration"],
+                "parent": "",
+                "classname": "org.mule.extension.ws.api.security.config.WssKeyStoreConfigurationAdapter",
+                "hasDefaultConstructor": true,
+                "isInstantiable": true,
+                "isFinal": false,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": false,
+                "isMap": false
+              },
+              "typeId": "org.mule.extension.ws.api.security.config.WssKeyStoreConfigurationAdapter",
+              "typeAlias": {"value": "wss-key-store-configuration"}
+            },
+            "type": "Object",
+            "fields": [
+              {
+                "annotations": {
+                  "display": {"displayModel": {"summary": "The alias of the private key to use"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "alias",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password used to access the private key."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "keyPassword"}
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password to access the store."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "password",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "display": {"displayModel": {
+                    "summary": "The location of the KeyStore file",
+                    "pathModel": {
+                      "fileExtensions": [],
+                      "acceptsUrls": false,
+                      "location": "EMBEDDED",
+                      "type": "FILE"
+                    }
+                  }},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "keyStorePath",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "default": "jks",
+                  "display": {"displayModel": {"summary": "The type of store (jks, pkcs12, jceks, or any other)"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "type"}
+              }
+            ]
+          },
+          "key": {
+            "name": "keyStoreConfiguration",
+            "required": "true"
+          }
+        }]
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.security.SecurityStrategyAdapter"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.security.WssSignSecurityStrategy",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.security.WssSignSecurityStrategy",
+          "typeAlias": {"value": "WssSignSecurityStrategy"}
+        },
+        "type": "Object",
+        "fields": [{
+          "annotations": {"expressionSupport": {"value": "NOT_SUPPORTED"}},
+          "model": {
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": ["org.mule.runtime.extension.api.soap.security.config.WssStoreConfiguration"],
+                "parent": "",
+                "classname": "org.mule.extension.ws.api.security.config.WssKeyStoreConfigurationAdapter",
+                "hasDefaultConstructor": true,
+                "isInstantiable": true,
+                "isFinal": false,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": false,
+                "isMap": false
+              },
+              "typeId": "org.mule.extension.ws.api.security.config.WssKeyStoreConfigurationAdapter",
+              "typeAlias": {"value": "wss-key-store-configuration"}
+            },
+            "type": "Object",
+            "fields": [
+              {
+                "annotations": {
+                  "display": {"displayModel": {"summary": "The alias of the private key to use"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "alias",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password used to access the private key."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "keyPassword"}
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password to access the store."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "password",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "display": {"displayModel": {
+                    "summary": "The location of the KeyStore file",
+                    "pathModel": {
+                      "fileExtensions": [],
+                      "acceptsUrls": false,
+                      "location": "EMBEDDED",
+                      "type": "FILE"
+                    }
+                  }},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "keyStorePath",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "default": "jks",
+                  "display": {"displayModel": {"summary": "The type of store (jks, pkcs12, jceks, or any other)"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "type"}
+              }
+            ]
+          },
+          "key": {
+            "name": "keyStoreConfiguration",
+            "required": "true"
+          }
+        }]
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.security.SecurityStrategyAdapter"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.security.WssTimestampSecurityStrategy",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.security.WssTimestampSecurityStrategy",
+          "typeAlias": {"value": "WssTimestampSecurityStrategy"}
+        },
+        "type": "Object",
+        "fields": [
+          {
+            "annotations": {
+              "default": "60",
+              "display": {"displayModel": {"summary": "The expiration time in the time unit specified. This value converted to seconds must be greater or equal to 1 second"}},
+              "expressionSupport": {"value": "SUPPORTED"}
+            },
+            "model": {
+              "annotations": {
+                "classInformation": {
+                  "implementedInterfaces": [],
+                  "parent": "",
+                  "classname": "long",
+                  "hasDefaultConstructor": false,
+                  "isInstantiable": false,
+                  "isFinal": true,
+                  "genericTypes": [],
+                  "isInterface": false,
+                  "isAbstract": true,
+                  "isMap": false
+                },
+                "int": {}
+              },
+              "type": "Number"
+            },
+            "key": {"name": "timeToLive"}
+          },
+          {
+            "annotations": {
+              "default": "SECONDS",
+              "display": {"displayModel": {"summary": "Time unit to be used in the timeToLive parameter"}},
+              "expressionSupport": {"value": "SUPPORTED"}
+            },
+            "model": {
+              "annotations": {
+                "typeId": "java.util.concurrent.TimeUnit",
+                "enum": {
+                  "values": [
+                    "NANOSECONDS",
+                    "MICROSECONDS",
+                    "MILLISECONDS",
+                    "SECONDS",
+                    "MINUTES",
+                    "HOURS",
+                    "DAYS"
+                  ],
+                  "type": "[Ljava.lang.String;"
+                }
+              },
+              "type": "String"
+            },
+            "key": {"name": "timeToLiveUnit"}
+          }
+        ]
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.security.SecurityStrategyAdapter"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.security.WssUsernameTokenSecurityStrategy",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.security.WssUsernameTokenSecurityStrategy",
+          "typeAlias": {"value": "WssUsernameTokenSecurityStrategy"}
+        },
+        "type": "Object",
+        "fields": [
+          {
+            "annotations": {"expressionSupport": {"value": "SUPPORTED"}},
+            "model": {"type": "String"},
+            "key": {
+              "name": "username",
+              "required": "true"
+            }
+          },
+          {
+            "annotations": {
+              "layout": {"layoutModel": {
+                "password": true,
+                "query": false,
+                "text": false
+              }},
+              "expressionSupport": {"value": "SUPPORTED"}
+            },
+            "model": {"type": "String"},
+            "key": {
+              "name": "password",
+              "required": "true"
+            }
+          },
+          {
+            "annotations": {
+              "default": "TEXT",
+              "display": {"displayModel": {"summary": "The type of the password that is provided. One of Digest or Text"}},
+              "expressionSupport": {"value": "SUPPORTED"}
+            },
+            "model": {
+              "annotations": {
+                "typeId": "org.mule.runtime.extension.api.soap.security.PasswordType",
+                "enum": {
+                  "values": [
+                    "TEXT",
+                    "DIGEST"
+                  ],
+                  "type": "[Ljava.lang.String;"
+                }
+              },
+              "type": "String"
+            },
+            "key": {"name": "passwordType"}
+          },
+          {
+            "annotations": {
+              "default": "false",
+              "expressionSupport": {"value": "SUPPORTED"}
+            },
+            "model": {
+              "annotations": {"typeId": "boolean"},
+              "type": "Boolean"
+            },
+            "key": {"name": "addNonce"}
+          },
+          {
+            "annotations": {
+              "default": "false",
+              "expressionSupport": {"value": "SUPPORTED"}
+            },
+            "model": {
+              "annotations": {"typeId": "boolean"},
+              "type": "Boolean"
+            },
+            "key": {"name": "addCreated"}
+          }
+        ]
+      },
+      {
+        "format": "java",
+        "annotations": {
+          "classInformation": {
+            "implementedInterfaces": ["org.mule.extension.ws.api.security.SecurityStrategyAdapter"],
+            "parent": "",
+            "classname": "org.mule.extension.ws.api.security.WssVerifySignatureSecurityStrategy",
+            "hasDefaultConstructor": true,
+            "isInstantiable": true,
+            "isFinal": false,
+            "genericTypes": [],
+            "isInterface": false,
+            "isAbstract": false,
+            "isMap": false
+          },
+          "typeId": "org.mule.extension.ws.api.security.WssVerifySignatureSecurityStrategy",
+          "typeAlias": {"value": "WssVerifySignatureSecurityStrategy"}
+        },
+        "type": "Object",
+        "fields": [{
+          "annotations": {"expressionSupport": {"value": "NOT_SUPPORTED"}},
+          "model": {
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": ["org.mule.runtime.extension.api.soap.security.config.WssStoreConfiguration"],
+                "parent": "",
+                "classname": "org.mule.extension.ws.api.security.config.WssTrustStoreConfigurationAdapter",
+                "hasDefaultConstructor": true,
+                "isInstantiable": true,
+                "isFinal": false,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": false,
+                "isMap": false
+              },
+              "typeId": "org.mule.extension.ws.api.security.config.WssTrustStoreConfigurationAdapter",
+              "typeAlias": {"value": "wss-trust-store-configuration"}
+            },
+            "type": "Object",
+            "fields": [
+              {
+                "annotations": {
+                  "display": {"displayModel": {
+                    "summary": "The location of the TrustStore file",
+                    "pathModel": {
+                      "fileExtensions": [],
+                      "acceptsUrls": false,
+                      "location": "EMBEDDED",
+                      "type": "FILE"
+                    }
+                  }},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "trustStorePath",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "layout": {"layoutModel": {
+                    "password": true,
+                    "query": false,
+                    "text": false
+                  }},
+                  "display": {"displayModel": {"summary": "The password to access the store."}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {
+                  "name": "password",
+                  "required": "true"
+                }
+              },
+              {
+                "annotations": {
+                  "default": "jks",
+                  "display": {"displayModel": {"summary": "The type of store (jks, pkcs12, jceks, or any other)"}},
+                  "expressionSupport": {"value": "SUPPORTED"}
+                },
+                "model": {"type": "String"},
+                "key": {"name": "type"}
+              }
+            ]
+          },
+          "key": {"name": "trustStoreConfiguration"}
+        }]
+      }
+    ],
+    "messageSources": [],
+    "functions": [],
+    "configurations": [{
+      "externalLibraryModels": [],
+      "operations": [{
+        "kind": "operation",
+        "executionType": "BLOCKING",
+        "description": "Consumes an operation from a SOAP Web Service.",
+        "modelProperties": {"metadataKeyId": {
+          "parameterName": "operation",
+          "type": {
+            "format": "java",
+            "type": "String"
+          },
+          "categoryName": "WebServiceConsumerCategory"
+        }},
+        "parameterGroupModels": [
+          {
+            "name": "General",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 1
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [{
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "operation",
+              "layoutModel": {
+                "password": false,
+                "query": false,
+                "text": false,
+                "order": 1
+              },
+              "description": "the name of the web service operation that aims to invoke.",
+              "modelProperties": {"org.mule.runtime.extension.api.property.MetadataKeyPartModelProperty": {
+                "providedByKeyResolver": true,
+                "order": 1
+              }},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "required": true,
+              "expressionSupport": "SUPPORTED"
+            }],
+            "exclusiveParametersModels": [],
+            "showInDsl": false
+          },
+          {
+            "name": "Message",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 2
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [
+              {
+                "displayModel": {"summary": "The XML body to include in the SOAP message, with all the required parameters."},
+                "role": "PRIMARY_CONTENT",
+                "defaultValue": "#[payload]",
+                "description": "The XML body to include in the SOAP message, with all the required parameters, or null if no params are required.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "annotations": {"classInformation": {
+                    "implementedInterfaces": ["java.io.Closeable"],
+                    "parent": "",
+                    "classname": "java.io.InputStream",
+                    "hasDefaultConstructor": true,
+                    "isInstantiable": false,
+                    "isFinal": false,
+                    "genericTypes": [],
+                    "isInterface": false,
+                    "isAbstract": true,
+                    "isMap": false
+                  }},
+                  "type": "Binary"
+                },
+                "required": false,
+                "expressionSupport": "SUPPORTED",
+                "hasDynamicType": true,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": false
+                },
+                "name": "body",
+                "layoutModel": {
+                  "password": false,
+                  "query": false,
+                  "text": false,
+                  "order": 2
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "displayModel": {"summary": "The XML headers to include in the SOAP message."},
+                "role": "CONTENT",
+                "description": "The XML headers to include in the SOAP message.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "annotations": {"classInformation": {
+                    "implementedInterfaces": ["java.io.Closeable"],
+                    "parent": "",
+                    "classname": "java.io.InputStream",
+                    "hasDefaultConstructor": true,
+                    "isInstantiable": false,
+                    "isFinal": false,
+                    "genericTypes": [],
+                    "isInterface": false,
+                    "isAbstract": true,
+                    "isMap": false
+                  }},
+                  "type": "Binary"
+                },
+                "required": false,
+                "expressionSupport": "SUPPORTED",
+                "hasDynamicType": true,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": false
+                },
+                "name": "headers",
+                "layoutModel": {
+                  "password": false,
+                  "query": false,
+                  "text": false,
+                  "order": 3
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "displayModel": {"summary": "The attachments to include in the SOAP request."},
+                "role": "CONTENT",
+                "description": "The attachments to include in the SOAP request.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "annotations": {"classInformation": {
+                    "implementedInterfaces": [],
+                    "parent": "",
+                    "classname": "java.util.Map",
+                    "hasDefaultConstructor": false,
+                    "isInstantiable": false,
+                    "isFinal": false,
+                    "genericTypes": [
+                      "java.lang.String",
+                      "org.mule.runtime.api.metadata.TypedValue"
+                    ],
+                    "isInterface": true,
+                    "isAbstract": true,
+                    "isMap": true
+                  }},
+                  "type": "Object",
+                  "fields": [],
+                  "open": {
+                    "annotations": {
+                      "classInformation": {
+                        "implementedInterfaces": [],
+                        "parent": "",
+                        "classname": "java.lang.Object",
+                        "hasDefaultConstructor": true,
+                        "isInstantiable": true,
+                        "isFinal": false,
+                        "genericTypes": [],
+                        "isInterface": false,
+                        "isAbstract": false,
+                        "isMap": false
+                      },
+                      "typeId": "java.lang.Object",
+                      "typeAlias": {"value": "Object"}
+                    },
+                    "type": "Object",
+                    "fields": []
+                  }
+                },
+                "required": false,
+                "expressionSupport": "SUPPORTED",
+                "hasDynamicType": true,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": false
+                },
+                "name": "attachments",
+                "layoutModel": {
+                  "password": false,
+                  "query": false,
+                  "text": false,
+                  "order": 4
+                },
+                "allowedStereotypeModels": []
+              }
+            ],
+            "exclusiveParametersModels": [],
+            "showInDsl": true
+          },
+          {
+            "name": "Transport Configuration",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 3
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [{
+              "displayModel": {"displayName": "Headers"},
+              "role": "BEHAVIOUR",
+              "description": "A group of transport headers that will be bounded with the transport request.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "annotations": {"classInformation": {
+                  "implementedInterfaces": [],
+                  "parent": "",
+                  "classname": "java.util.Map",
+                  "hasDefaultConstructor": false,
+                  "isInstantiable": false,
+                  "isFinal": false,
+                  "genericTypes": [
+                    "java.lang.String",
+                    "java.lang.String"
+                  ],
+                  "isInterface": true,
+                  "isAbstract": true,
+                  "isMap": true
+                }},
+                "type": "Object",
+                "fields": [],
+                "open": {"type": "String"}
+              },
+              "required": false,
+              "expressionSupport": "SUPPORTED",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "transportHeaders",
+              "layoutModel": {
+                "password": false,
+                "query": false,
+                "text": false,
+                "order": 5
+              },
+              "allowedStereotypeModels": []
+            }],
+            "exclusiveParametersModels": [],
+            "showInDsl": false
+          },
+          {
+            "name": "Output",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 4
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [
+              {
+                "displayModel": {"displayName": "Target Variable"},
+                "role": "BEHAVIOUR",
+                "description": "The name of a variable on which the operation's output will be placed",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "String"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "target",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Advanced",
+                  "query": false,
+                  "text": false,
+                  "order": 6
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "displayModel": {"displayName": "Target Value"},
+                "role": "BEHAVIOUR",
+                "defaultValue": "#[payload]",
+                "description": "An expression that will be evaluated against the operation's output and the outcome of that expression will be stored in the target variable",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "String"
+                },
+                "required": false,
+                "expressionSupport": "REQUIRED",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "targetValue",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Advanced",
+                  "query": false,
+                  "text": false,
+                  "order": 7
+                },
+                "allowedStereotypeModels": []
+              }
+            ],
+            "exclusiveParametersModels": [],
+            "showInDsl": false
+          },
+          {
+            "name": "Connection",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 5
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [{
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": false
+              },
+              "name": "reconnectionStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Advanced",
+                "query": false,
+                "text": false,
+                "order": 8
+              },
+              "description": "A retry strategy in case of connectivity errors",
+              "modelProperties": {
+                "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 3},
+                "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+                  "localPart": "abstract-reconnection-strategy",
+                  "prefix": "mule",
+                  "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+                }}
+              },
+              "allowedStereotypeModels": [],
+              "type": {
+                "of": [
+                  {
+                    "annotations": {"typeId": "reconnect"},
+                    "type": "Object",
+                    "fields": [
+                      {
+                        "annotations": {"description": {"value": "How often (in ms) to reconnect"}},
+                        "model": {
+                          "annotations": {
+                            "default": "2000",
+                            "classInformation": {
+                              "implementedInterfaces": ["java.lang.Comparable"],
+                              "parent": "java.lang.Number",
+                              "classname": "java.lang.Long",
+                              "hasDefaultConstructor": false,
+                              "isInstantiable": false,
+                              "isFinal": true,
+                              "genericTypes": [],
+                              "isInterface": false,
+                              "isAbstract": false,
+                              "isMap": false
+                            },
+                            "int": {}
+                          },
+                          "type": "Number"
+                        },
+                        "key": {"name": "frequency"}
+                      },
+                      {
+                        "annotations": {"description": {"value": "How many reconnection attempts to make"}},
+                        "model": {
+                          "annotations": {
+                            "default": "2",
+                            "int": {}
+                          },
+                          "type": "Number"
+                        },
+                        "key": {"name": "count"}
+                      }
+                    ]
+                  },
+                  {
+                    "annotations": {"typeId": "reconnect-forever"},
+                    "type": "Object",
+                    "fields": [{
+                      "annotations": {"description": {"value": "How often (in ms) to reconnect"}},
+                      "model": {
+                        "annotations": {
+                          "default": "2000",
+                          "classInformation": {
+                            "implementedInterfaces": ["java.lang.Comparable"],
+                            "parent": "java.lang.Number",
+                            "classname": "java.lang.Long",
+                            "hasDefaultConstructor": false,
+                            "isInstantiable": false,
+                            "isFinal": true,
+                            "genericTypes": [],
+                            "isInterface": false,
+                            "isAbstract": false,
+                            "isMap": false
+                          },
+                          "int": {}
+                        },
+                        "type": "Number"
+                      },
+                      "key": {"name": "frequency"}
+                    }]
+                  }
+                ],
+                "format": "java",
+                "annotations": {"typeId": "ReconnectionStrategy"},
+                "type": "Union"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            }],
+            "exclusiveParametersModels": [],
+            "showInDsl": false
+          }
+        ],
+        "output": {
+          "hasDynamicType": true,
+          "description": "",
+          "modelProperties": {},
+          "type": {
+            "format": "java",
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": [],
+                "parent": "",
+                "classname": "org.mule.runtime.extension.api.soap.SoapOutputPayload",
+                "hasDefaultConstructor": false,
+                "isInstantiable": false,
+                "isFinal": false,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": false,
+                "isMap": false
+              },
+              "typeId": "org.mule.runtime.extension.api.soap.SoapOutputPayload",
+              "typeAlias": {"value": "SoapOutputPayload"}
+            },
+            "type": "Object",
+            "fields": [
+              {
+                "annotations": {"visibility": "READ_ONLY"},
+                "model": {
+                  "annotations": {"classInformation": {
+                    "implementedInterfaces": [],
+                    "parent": "",
+                    "classname": "java.util.Map",
+                    "hasDefaultConstructor": false,
+                    "isInstantiable": false,
+                    "isFinal": false,
+                    "genericTypes": [
+                      "java.lang.String",
+                      "org.mule.runtime.api.metadata.TypedValue"
+                    ],
+                    "isInterface": true,
+                    "isAbstract": true,
+                    "isMap": true
+                  }},
+                  "type": "Object",
+                  "fields": [],
+                  "open": {
+                    "annotations": {"classInformation": {
+                      "implementedInterfaces": ["java.io.Closeable"],
+                      "parent": "",
+                      "classname": "java.io.InputStream",
+                      "hasDefaultConstructor": true,
+                      "isInstantiable": false,
+                      "isFinal": false,
+                      "genericTypes": [],
+                      "isInterface": false,
+                      "isAbstract": true,
+                      "isMap": false
+                    }},
+                    "type": "Binary"
+                  }
+                },
+                "key": {"name": "attachments"}
+              },
+              {
+                "annotations": {"visibility": "READ_ONLY"},
+                "model": {
+                  "annotations": {"classInformation": {
+                    "implementedInterfaces": ["java.io.Closeable"],
+                    "parent": "",
+                    "classname": "java.io.InputStream",
+                    "hasDefaultConstructor": true,
+                    "isInstantiable": false,
+                    "isFinal": false,
+                    "genericTypes": [],
+                    "isInterface": false,
+                    "isAbstract": true,
+                    "isMap": false
+                  }},
+                  "type": "Binary"
+                },
+                "key": {"name": "body"}
+              },
+              {
+                "annotations": {"visibility": "READ_ONLY"},
+                "model": {
+                  "annotations": {"classInformation": {
+                    "implementedInterfaces": [],
+                    "parent": "",
+                    "classname": "java.util.Map",
+                    "hasDefaultConstructor": false,
+                    "isInstantiable": false,
+                    "isFinal": false,
+                    "genericTypes": [
+                      "java.lang.String",
+                      "org.mule.runtime.api.metadata.TypedValue"
+                    ],
+                    "isInterface": true,
+                    "isAbstract": true,
+                    "isMap": true
+                  }},
+                  "type": "Object",
+                  "fields": [],
+                  "open": {"type": "String"}
+                },
+                "key": {"name": "headers"}
+              }
+            ]
+          }
+        },
+        "outputAttributes": {
+          "hasDynamicType": false,
+          "description": "",
+          "modelProperties": {},
+          "type": {
+            "format": "java",
+            "annotations": {
+              "classInformation": {
+                "implementedInterfaces": ["java.io.Serializable"],
+                "parent": "",
+                "classname": "org.mule.runtime.extension.api.soap.SoapAttributes",
+                "hasDefaultConstructor": false,
+                "isInstantiable": false,
+                "isFinal": true,
+                "genericTypes": [],
+                "isInterface": false,
+                "isAbstract": false,
+                "isMap": false
+              },
+              "typeId": "org.mule.runtime.extension.api.soap.SoapAttributes",
+              "typeAlias": {"value": "SoapAttributes"}
+            },
+            "type": "Object",
+            "fields": [{
+              "annotations": {"visibility": "READ_ONLY"},
+              "model": {
+                "annotations": {"classInformation": {
+                  "implementedInterfaces": [],
+                  "parent": "",
+                  "classname": "java.util.Map",
+                  "hasDefaultConstructor": false,
+                  "isInstantiable": false,
+                  "isFinal": false,
+                  "genericTypes": [
+                    "java.lang.String",
+                    "java.lang.String"
+                  ],
+                  "isInterface": true,
+                  "isAbstract": true,
+                  "isMap": true
+                }},
+                "type": "Object",
+                "fields": [],
+                "open": {"type": "String"}
+              },
+              "key": {"name": "protocolHeaders"}
+            }]
+          }
+        },
+        "supportsStreaming": false,
+        "requiresConnection": true,
+        "blocking": true,
+        "name": "consume",
+        "stereotype": {
+          "namespace": "MULE",
+          "type": "PROCESSOR"
+        },
+        "nestedComponents": [],
+        "transactional": false,
+        "notifications": [],
+        "errors": [
+          "WSC:SOAP_FAULT",
+          "WSC:TIMEOUT",
+          "WSC:BAD_RESPONSE",
+          "WSC:BAD_REQUEST",
+          "WSC:CONNECTIVITY",
+          "WSC:CANNOT_DISPATCH",
+          "WSC:RETRY_EXHAUSTED",
+          "WSC:ENCODING",
+          "WSC:INVALID_WSDL"
+        ]
+      }],
+      "messageSources": [],
+      "name": "config",
+      "description": "Default configuration",
+      "modelProperties": {},
+      "stereotype": {
+        "parent": {
+          "namespace": "MULE",
+          "type": "MODULE_CONFIG"
+        },
+        "namespace": "WSC",
+        "type": "CONFIG"
+      },
+      "parameterGroupModels": [{
+        "name": "General",
+        "layoutModel": {
+          "password": false,
+          "query": false,
+          "text": false,
+          "order": 1
+        },
+        "description": "",
+        "modelProperties": {},
+        "parameters": [{
+          "role": "BEHAVIOUR",
+          "hasDynamicType": false,
+          "isConfigOverride": false,
+          "dslConfiguration": {
+            "allowTopLevelDefinition": false,
+            "allowsInlineDefinition": true,
+            "allowsReferences": false
+          },
+          "name": "expirationPolicy",
+          "layoutModel": {
+            "password": false,
+            "tabName": "Advanced",
+            "query": false,
+            "text": false,
+            "order": 1
+          },
+          "description": "Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit.",
+          "modelProperties": {
+            "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 4},
+            "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+              "localPart": "expiration-policy",
+              "prefix": "mule",
+              "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+            }}
+          },
+          "allowedStereotypeModels": [],
+          "type": {
+            "format": "java",
+            "annotations": {
+              "typeDsl": {
+                "allowTopLevelDefinition": false,
+                "allowInlineDefinition": true
+              },
+              "description": {"value": "Configures the minimum amount of time that a dynamic configuration instance can remain idle before the runtime considers it eligible for expiration. This does not mean that the platform will expire the instance at the exact moment that it becomes eligible. The runtime will actually purge the instances when it sees it fit."},
+              "typeId": "org.mule.runtime.extension.api.runtime.ExpirationPolicy"
+            },
+            "type": "Object",
+            "fields": [
+              {
+                "annotations": {
+                  "description": {"value": "A scalar time value for the maximum amount of time a dynamic configuration instance should be allowed to be idle before it's considered eligible for expiration"},
+                  "expressionSupport": {"value": "NOT_SUPPORTED"}
+                },
+                "model": {
+                  "annotations": {
+                    "default": "5",
+                    "classInformation": {
+                      "implementedInterfaces": ["java.lang.Comparable"],
+                      "parent": "java.lang.Number",
+                      "classname": "java.lang.Long",
+                      "hasDefaultConstructor": false,
+                      "isInstantiable": false,
+                      "isFinal": true,
+                      "genericTypes": [],
+                      "isInterface": false,
+                      "isAbstract": false,
+                      "isMap": false
+                    },
+                    "int": {}
+                  },
+                  "type": "Number"
+                },
+                "key": {"name": "maxIdleTime"}
+              },
+              {
+                "annotations": {
+                  "description": {"value": "A time unit that qualifies the maxIdleTime attribute"},
+                  "expressionSupport": {"value": "NOT_SUPPORTED"}
+                },
+                "model": {
+                  "annotations": {
+                    "default": "MINUTES",
+                    "enum": {
+                      "values": [
+                        "NANOSECONDS",
+                        "MICROSECONDS",
+                        "MILLISECONDS",
+                        "SECONDS",
+                        "MINUTES",
+                        "HOURS",
+                        "DAYS"
+                      ],
+                      "type": "[Ljava.lang.String;"
+                    }
+                  },
+                  "type": "String"
+                },
+                "key": {"name": "timeUnit"}
+              }
+            ]
+          },
+          "required": false,
+          "expressionSupport": "NOT_SUPPORTED"
+        }],
+        "exclusiveParametersModels": [],
+        "showInDsl": false
+      }],
+      "connectionProviders": [{
+        "externalLibraryModels": [],
+        "connectionManagementType": "CACHED",
+        "supportsConnectivityTesting": false,
+        "name": "connection",
+        "description": "ConnectionProvider that returns instances of SoapClient.",
+        "modelProperties": {},
+        "stereotype": {
+          "parent": {
+            "namespace": "MULE",
+            "type": "CONNECTION"
+          },
+          "namespace": "WSC",
+          "type": "CONNECTION"
+        },
+        "parameterGroupModels": [
+          {
+            "name": "General",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 0
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [
+              {
+                "role": "BEHAVIOUR",
+                "defaultValue": "SOAP11",
+                "description": "The soap version of the WSDL.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "annotations": {
+                    "typeId": "org.mule.runtime.soap.api.SoapVersion",
+                    "enum": {
+                      "values": [
+                        "SOAP11",
+                        "SOAP12"
+                      ],
+                      "type": "[Ljava.lang.String;"
+                    }
+                  },
+                  "type": "String"
+                },
+                "required": false,
+                "expressionSupport": "SUPPORTED",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "soapVersion",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "General",
+                  "query": false,
+                  "text": false,
+                  "order": 5
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "role": "BEHAVIOUR",
+                "defaultValue": "false",
+                "description": "If should use the MTOM protocol to manage the attachments or not.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "annotations": {"typeId": "boolean"},
+                  "type": "Boolean"
+                },
+                "required": false,
+                "expressionSupport": "SUPPORTED",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "mtomEnabled",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "General",
+                  "query": false,
+                  "text": false,
+                  "order": 6
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "displayModel": {"displayName": "Transport Configuration"},
+                "role": "BEHAVIOUR",
+                "description": "The transport configuration used to dispatch the SOAP messages.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.message.CustomTransportConfiguration"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "customTransportConfiguration",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Transport",
+                  "query": false,
+                  "text": false,
+                  "order": 14
+                },
+                "allowedStereotypeModels": []
+              }
+            ],
+            "exclusiveParametersModels": [],
+            "showInDsl": false
+          },
+          {
+            "name": "Connection",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 1
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [
+              {
+                "displayModel": {
+                  "pathModel": {
+                    "fileExtensions": ["wsdl"],
+                    "acceptsUrls": true,
+                    "location": "ANY",
+                    "type": "FILE"
+                  },
+                  "example": "http://www.somehost.com/location?wsdl"
+                },
+                "role": "BEHAVIOUR",
+                "description": "The WSDL file URL remote or local.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "String"
+                },
+                "required": true,
+                "expressionSupport": "SUPPORTED",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "wsdlLocation",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "General",
+                  "query": false,
+                  "text": false,
+                  "order": 1
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "role": "BEHAVIOUR",
+                "description": "The service name.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "String"
+                },
+                "required": true,
+                "expressionSupport": "SUPPORTED",
+                "valueProviderModel": {
+                  "partOrder": 1,
+                  "requiresConnection": false,
+                  "isOpen": true,
+                  "actingParameters": ["wsdlLocation"],
+                  "requiresConfiguration": false,
+                  "providerName": "Connection"
+                },
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "service",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "General",
+                  "query": false,
+                  "text": false,
+                  "order": 2
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "role": "BEHAVIOUR",
+                "description": "The port name.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "String"
+                },
+                "required": true,
+                "expressionSupport": "SUPPORTED",
+                "valueProviderModel": {
+                  "partOrder": 2,
+                  "requiresConnection": false,
+                  "isOpen": true,
+                  "actingParameters": ["wsdlLocation"],
+                  "requiresConfiguration": false,
+                  "providerName": "Connection"
+                },
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "port",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "General",
+                  "query": false,
+                  "text": false,
+                  "order": 3
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "role": "BEHAVIOUR",
+                "description": "The address of the web service.",
+                "modelProperties": {},
+                "type": {
+                  "format": "java",
+                  "type": "String"
+                },
+                "required": false,
+                "expressionSupport": "SUPPORTED",
+                "valueProviderModel": {
+                  "partOrder": 3,
+                  "requiresConnection": false,
+                  "isOpen": true,
+                  "actingParameters": ["wsdlLocation"],
+                  "requiresConfiguration": false,
+                  "providerName": "Connection"
+                },
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": false,
+                  "allowsReferences": false
+                },
+                "name": "address",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "General",
+                  "query": false,
+                  "text": false,
+                  "order": 4
+                },
+                "allowedStereotypeModels": []
+              },
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": false
+                },
+                "name": "reconnection",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Advanced",
+                  "query": false,
+                  "text": false,
+                  "order": 7
+                },
+                "description": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy",
+                "modelProperties": {
+                  "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 3},
+                  "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+                    "localPart": "reconnection",
+                    "prefix": "mule",
+                    "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+                  }}
+                },
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "annotations": {"typeId": "Reconnection"},
+                  "type": "Object",
+                  "fields": [
+                    {
+                      "annotations": {"description": {"value": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy"}},
+                      "model": {
+                        "annotations": {"default": "false"},
+                        "type": "Boolean"
+                      },
+                      "key": {"name": "failsDeployment"}
+                    },
+                    {
+                      "annotations": {"description": {"value": "The reconnection strategy to use"}},
+                      "model": {
+                        "of": [
+                          {
+                            "annotations": {"typeId": "reconnect"},
+                            "type": "Object",
+                            "fields": [
+                              {
+                                "annotations": {"description": {"value": "How often (in ms) to reconnect"}},
+                                "model": {
+                                  "annotations": {
+                                    "default": "2000",
+                                    "classInformation": {
+                                      "implementedInterfaces": ["java.lang.Comparable"],
+                                      "parent": "java.lang.Number",
+                                      "classname": "java.lang.Long",
+                                      "hasDefaultConstructor": false,
+                                      "isInstantiable": false,
+                                      "isFinal": true,
+                                      "genericTypes": [],
+                                      "isInterface": false,
+                                      "isAbstract": false,
+                                      "isMap": false
+                                    },
+                                    "int": {}
+                                  },
+                                  "type": "Number"
+                                },
+                                "key": {"name": "frequency"}
+                              },
+                              {
+                                "annotations": {"description": {"value": "How many reconnection attempts to make"}},
+                                "model": {
+                                  "annotations": {
+                                    "default": "2",
+                                    "int": {}
+                                  },
+                                  "type": "Number"
+                                },
+                                "key": {"name": "count"}
+                              }
+                            ]
+                          },
+                          {
+                            "annotations": {"typeId": "reconnect-forever"},
+                            "type": "Object",
+                            "fields": [{
+                              "annotations": {"description": {"value": "How often (in ms) to reconnect"}},
+                              "model": {
+                                "annotations": {
+                                  "default": "2000",
+                                  "classInformation": {
+                                    "implementedInterfaces": ["java.lang.Comparable"],
+                                    "parent": "java.lang.Number",
+                                    "classname": "java.lang.Long",
+                                    "hasDefaultConstructor": false,
+                                    "isInstantiable": false,
+                                    "isFinal": true,
+                                    "genericTypes": [],
+                                    "isInterface": false,
+                                    "isAbstract": false,
+                                    "isMap": false
+                                  },
+                                  "int": {}
+                                },
+                                "type": "Number"
+                              },
+                              "key": {"name": "frequency"}
+                            }]
+                          }
+                        ],
+                        "annotations": {"typeId": "ReconnectionStrategy"},
+                        "type": "Union"
+                      },
+                      "key": {"name": "reconnectionStrategy"}
+                    }
+                  ]
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              }
+            ],
+            "exclusiveParametersModels": [],
+            "showInDsl": false
+          },
+          {
+            "name": "Web Service Security",
+            "layoutModel": {
+              "password": false,
+              "query": false,
+              "text": false,
+              "order": 2
+            },
+            "description": "",
+            "modelProperties": {},
+            "parameters": [
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "signSecurityStrategy",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Security",
+                  "query": false,
+                  "text": false,
+                  "order": 8
+                },
+                "description": "a sign WSS configuration",
+                "modelProperties": {},
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.security.WssSignSecurityStrategy"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              },
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "verifySignatureSecurityStrategy",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Security",
+                  "query": false,
+                  "text": false,
+                  "order": 9
+                },
+                "description": "a verify signature WSS configuration",
+                "modelProperties": {},
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.security.WssVerifySignatureSecurityStrategy"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              },
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "usernameTokenSecurityStrategy",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Security",
+                  "query": false,
+                  "text": false,
+                  "order": 10
+                },
+                "description": "a usernameToken WSS configuration",
+                "modelProperties": {},
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.security.WssUsernameTokenSecurityStrategy"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              },
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "timestampSecurityStrategy",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Security",
+                  "query": false,
+                  "text": false,
+                  "order": 11
+                },
+                "description": "a timestamp WSS configuration",
+                "modelProperties": {},
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.security.WssTimestampSecurityStrategy"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              },
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "decryptSecurityStrategy",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Security",
+                  "query": false,
+                  "text": false,
+                  "order": 12
+                },
+                "description": "a decrypt WSS configuration",
+                "modelProperties": {},
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.security.WssDecryptSecurityStrategy"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              },
+              {
+                "role": "BEHAVIOUR",
+                "hasDynamicType": false,
+                "isConfigOverride": false,
+                "dslConfiguration": {
+                  "allowTopLevelDefinition": false,
+                  "allowsInlineDefinition": true,
+                  "allowsReferences": true
+                },
+                "name": "encryptSecurityStrategy",
+                "layoutModel": {
+                  "password": false,
+                  "tabName": "Security",
+                  "query": false,
+                  "text": false,
+                  "order": 13
+                },
+                "description": "an encrypt WSS configuration",
+                "modelProperties": {},
+                "allowedStereotypeModels": [],
+                "type": {
+                  "format": "java",
+                  "type": "@ref:org.mule.extension.ws.api.security.WssEncryptSecurityStrategy"
+                },
+                "required": false,
+                "expressionSupport": "NOT_SUPPORTED"
+              }
+            ],
+            "exclusiveParametersModels": [],
+            "showInDsl": true
+          }
+        ]
+      }]
+    }],
+    "externalLibraries": [],
+    "description": "Web Service Consumer extension used to consume SOAP web services.",
+    "resources": [],
+    "subTypes": [{
+      "subTypes": [{
+        "format": "java",
+        "type": "@ref:org.mule.extension.ws.api.message.CustomHttpTransportConfiguration"
+      }],
+      "baseType": {
+        "format": "java",
+        "type": "@ref:org.mule.extension.ws.api.message.CustomTransportConfiguration"
+      }
+    }],
+    "modelProperties": {},
+    "constructs": [],
+    "connectionProviders": [{
+      "externalLibraryModels": [],
+      "connectionManagementType": "CACHED",
+      "supportsConnectivityTesting": false,
+      "name": "connection",
+      "description": "ConnectionProvider that returns instances of SoapClient.",
+      "modelProperties": {},
+      "stereotype": {
+        "parent": {
+          "namespace": "MULE",
+          "type": "CONNECTION"
+        },
+        "namespace": "WSC",
+        "type": "CONNECTION"
+      },
+      "parameterGroupModels": [
+        {
+          "name": "General",
+          "layoutModel": {
+            "password": false,
+            "query": false,
+            "text": false,
+            "order": 0
+          },
+          "description": "",
+          "modelProperties": {},
+          "parameters": [
+            {
+              "role": "BEHAVIOUR",
+              "defaultValue": "SOAP11",
+              "description": "The soap version of the WSDL.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "annotations": {
+                  "typeId": "org.mule.runtime.soap.api.SoapVersion",
+                  "enum": {
+                    "values": [
+                      "SOAP11",
+                      "SOAP12"
+                    ],
+                    "type": "[Ljava.lang.String;"
+                  }
+                },
+                "type": "String"
+              },
+              "required": false,
+              "expressionSupport": "SUPPORTED",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "soapVersion",
+              "layoutModel": {
+                "password": false,
+                "tabName": "General",
+                "query": false,
+                "text": false,
+                "order": 5
+              },
+              "allowedStereotypeModels": []
+            },
+            {
+              "role": "BEHAVIOUR",
+              "defaultValue": "false",
+              "description": "If should use the MTOM protocol to manage the attachments or not.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "annotations": {"typeId": "boolean"},
+                "type": "Boolean"
+              },
+              "required": false,
+              "expressionSupport": "SUPPORTED",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "mtomEnabled",
+              "layoutModel": {
+                "password": false,
+                "tabName": "General",
+                "query": false,
+                "text": false,
+                "order": 6
+              },
+              "allowedStereotypeModels": []
+            },
+            {
+              "displayModel": {"displayName": "Transport Configuration"},
+              "role": "BEHAVIOUR",
+              "description": "The transport configuration used to dispatch the SOAP messages.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.message.CustomTransportConfiguration"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "customTransportConfiguration",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Transport",
+                "query": false,
+                "text": false,
+                "order": 14
+              },
+              "allowedStereotypeModels": []
+            }
+          ],
+          "exclusiveParametersModels": [],
+          "showInDsl": false
+        },
+        {
+          "name": "Connection",
+          "layoutModel": {
+            "password": false,
+            "query": false,
+            "text": false,
+            "order": 1
+          },
+          "description": "",
+          "modelProperties": {},
+          "parameters": [
+            {
+              "displayModel": {
+                "pathModel": {
+                  "fileExtensions": ["wsdl"],
+                  "acceptsUrls": true,
+                  "location": "ANY",
+                  "type": "FILE"
+                },
+                "example": "http://www.somehost.com/location?wsdl"
+              },
+              "role": "BEHAVIOUR",
+              "description": "The WSDL file URL remote or local.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "required": true,
+              "expressionSupport": "SUPPORTED",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "wsdlLocation",
+              "layoutModel": {
+                "password": false,
+                "tabName": "General",
+                "query": false,
+                "text": false,
+                "order": 1
+              },
+              "allowedStereotypeModels": []
+            },
+            {
+              "role": "BEHAVIOUR",
+              "description": "The service name.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "required": true,
+              "expressionSupport": "SUPPORTED",
+              "valueProviderModel": {
+                "partOrder": 1,
+                "requiresConnection": false,
+                "isOpen": true,
+                "actingParameters": ["wsdlLocation"],
+                "requiresConfiguration": false,
+                "providerName": "Connection"
+              },
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "service",
+              "layoutModel": {
+                "password": false,
+                "tabName": "General",
+                "query": false,
+                "text": false,
+                "order": 2
+              },
+              "allowedStereotypeModels": []
+            },
+            {
+              "role": "BEHAVIOUR",
+              "description": "The port name.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "required": true,
+              "expressionSupport": "SUPPORTED",
+              "valueProviderModel": {
+                "partOrder": 2,
+                "requiresConnection": false,
+                "isOpen": true,
+                "actingParameters": ["wsdlLocation"],
+                "requiresConfiguration": false,
+                "providerName": "Connection"
+              },
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "port",
+              "layoutModel": {
+                "password": false,
+                "tabName": "General",
+                "query": false,
+                "text": false,
+                "order": 3
+              },
+              "allowedStereotypeModels": []
+            },
+            {
+              "role": "BEHAVIOUR",
+              "description": "The address of the web service.",
+              "modelProperties": {},
+              "type": {
+                "format": "java",
+                "type": "String"
+              },
+              "required": false,
+              "expressionSupport": "SUPPORTED",
+              "valueProviderModel": {
+                "partOrder": 3,
+                "requiresConnection": false,
+                "isOpen": true,
+                "actingParameters": ["wsdlLocation"],
+                "requiresConfiguration": false,
+                "providerName": "Connection"
+              },
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": false,
+                "allowsReferences": false
+              },
+              "name": "address",
+              "layoutModel": {
+                "password": false,
+                "tabName": "General",
+                "query": false,
+                "text": false,
+                "order": 4
+              },
+              "allowedStereotypeModels": []
+            },
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": false
+              },
+              "name": "reconnection",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Advanced",
+                "query": false,
+                "text": false,
+                "order": 7
+              },
+              "description": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy",
+              "modelProperties": {
+                "org.mule.runtime.extension.api.property.InfrastructureParameterModelProperty": {"sequence": 3},
+                "org.mule.runtime.extension.api.property.QNameModelProperty": {"value": {
+                  "localPart": "reconnection",
+                  "prefix": "mule",
+                  "namespaceURI": "http://www.mulesoft.org/schema/mule/core"
+                }}
+              },
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "annotations": {"typeId": "Reconnection"},
+                "type": "Object",
+                "fields": [
+                  {
+                    "annotations": {"description": {"value": "When the application is deployed, a connectivity test is performed on all connectors. If set to true, deployment will fail if the test doesn't pass after exhausting the associated reconnection strategy"}},
+                    "model": {
+                      "annotations": {"default": "false"},
+                      "type": "Boolean"
+                    },
+                    "key": {"name": "failsDeployment"}
+                  },
+                  {
+                    "annotations": {"description": {"value": "The reconnection strategy to use"}},
+                    "model": {
+                      "of": [
+                        {
+                          "annotations": {"typeId": "reconnect"},
+                          "type": "Object",
+                          "fields": [
+                            {
+                              "annotations": {"description": {"value": "How often (in ms) to reconnect"}},
+                              "model": {
+                                "annotations": {
+                                  "default": "2000",
+                                  "classInformation": {
+                                    "implementedInterfaces": ["java.lang.Comparable"],
+                                    "parent": "java.lang.Number",
+                                    "classname": "java.lang.Long",
+                                    "hasDefaultConstructor": false,
+                                    "isInstantiable": false,
+                                    "isFinal": true,
+                                    "genericTypes": [],
+                                    "isInterface": false,
+                                    "isAbstract": false,
+                                    "isMap": false
+                                  },
+                                  "int": {}
+                                },
+                                "type": "Number"
+                              },
+                              "key": {"name": "frequency"}
+                            },
+                            {
+                              "annotations": {"description": {"value": "How many reconnection attempts to make"}},
+                              "model": {
+                                "annotations": {
+                                  "default": "2",
+                                  "int": {}
+                                },
+                                "type": "Number"
+                              },
+                              "key": {"name": "count"}
+                            }
+                          ]
+                        },
+                        {
+                          "annotations": {"typeId": "reconnect-forever"},
+                          "type": "Object",
+                          "fields": [{
+                            "annotations": {"description": {"value": "How often (in ms) to reconnect"}},
+                            "model": {
+                              "annotations": {
+                                "default": "2000",
+                                "classInformation": {
+                                  "implementedInterfaces": ["java.lang.Comparable"],
+                                  "parent": "java.lang.Number",
+                                  "classname": "java.lang.Long",
+                                  "hasDefaultConstructor": false,
+                                  "isInstantiable": false,
+                                  "isFinal": true,
+                                  "genericTypes": [],
+                                  "isInterface": false,
+                                  "isAbstract": false,
+                                  "isMap": false
+                                },
+                                "int": {}
+                              },
+                              "type": "Number"
+                            },
+                            "key": {"name": "frequency"}
+                          }]
+                        }
+                      ],
+                      "annotations": {"typeId": "ReconnectionStrategy"},
+                      "type": "Union"
+                    },
+                    "key": {"name": "reconnectionStrategy"}
+                  }
+                ]
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            }
+          ],
+          "exclusiveParametersModels": [],
+          "showInDsl": false
+        },
+        {
+          "name": "Web Service Security",
+          "layoutModel": {
+            "password": false,
+            "query": false,
+            "text": false,
+            "order": 2
+          },
+          "description": "",
+          "modelProperties": {},
+          "parameters": [
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "signSecurityStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Security",
+                "query": false,
+                "text": false,
+                "order": 8
+              },
+              "description": "a sign WSS configuration",
+              "modelProperties": {},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.security.WssSignSecurityStrategy"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            },
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "verifySignatureSecurityStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Security",
+                "query": false,
+                "text": false,
+                "order": 9
+              },
+              "description": "a verify signature WSS configuration",
+              "modelProperties": {},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.security.WssVerifySignatureSecurityStrategy"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            },
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "usernameTokenSecurityStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Security",
+                "query": false,
+                "text": false,
+                "order": 10
+              },
+              "description": "a usernameToken WSS configuration",
+              "modelProperties": {},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.security.WssUsernameTokenSecurityStrategy"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            },
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "timestampSecurityStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Security",
+                "query": false,
+                "text": false,
+                "order": 11
+              },
+              "description": "a timestamp WSS configuration",
+              "modelProperties": {},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.security.WssTimestampSecurityStrategy"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            },
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "decryptSecurityStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Security",
+                "query": false,
+                "text": false,
+                "order": 12
+              },
+              "description": "a decrypt WSS configuration",
+              "modelProperties": {},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.security.WssDecryptSecurityStrategy"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            },
+            {
+              "role": "BEHAVIOUR",
+              "hasDynamicType": false,
+              "isConfigOverride": false,
+              "dslConfiguration": {
+                "allowTopLevelDefinition": false,
+                "allowsInlineDefinition": true,
+                "allowsReferences": true
+              },
+              "name": "encryptSecurityStrategy",
+              "layoutModel": {
+                "password": false,
+                "tabName": "Security",
+                "query": false,
+                "text": false,
+                "order": 13
+              },
+              "description": "an encrypt WSS configuration",
+              "modelProperties": {},
+              "allowedStereotypeModels": [],
+              "type": {
+                "format": "java",
+                "type": "@ref:org.mule.extension.ws.api.security.WssEncryptSecurityStrategy"
+              },
+              "required": false,
+              "expressionSupport": "NOT_SUPPORTED"
+            }
+          ],
+          "exclusiveParametersModels": [],
+          "showInDsl": true
+        }
+      ]
+    }],
+    "version": "1.1.1",
+    "privilegedArtifacts": [],
+    "importedTypes": [],
+    "xmlDsl": {
+      "schemaVersion": "1.1.1",
+      "prefix": "wsc",
+      "schemaLocation": "http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd",
+      "namespace": "http://www.mulesoft.org/schema/mule/wsc",
+      "xsdFileName": "mule-wsc.xsd"
+    },
+    "operations": [],
+    "vendor": "Mulesoft",
+    "name": "Web Service Consumer",
+    "privilegedPackages": [],
+    "category": "COMMUNITY",
+    "notifications": [],
+    "errors": [
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:ENCODING",
+        "handleable": true
+      },
+      {
+        "error": "MULE:ANY",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "MULE:CONNECTIVITY",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:BAD_REQUEST",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:CONNECTIVITY",
+        "error": "WSC:CONNECTIVITY",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:RETRY_EXHAUSTED",
+        "error": "WSC:RETRY_EXHAUSTED",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "MULE:RETRY_EXHAUSTED",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:SOAP_FAULT",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:BAD_RESPONSE",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:CANNOT_DISPATCH",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:INVALID_WSDL",
+        "handleable": true
+      },
+      {
+        "parent": "MULE:ANY",
+        "error": "WSC:TIMEOUT",
+        "handleable": true
+      }
+    ]
+  }
+}

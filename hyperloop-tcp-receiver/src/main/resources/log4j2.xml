@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+
+
+	<Properties>
+		<Property name="baseDir">/opt/mule/logs/</Property>
+	</Properties>
+
+
+    <Appenders>
+    
+    
+		<RollingFile name="spacex_data" fileName="${baseDir}spacex_data/spacex.log" 
+            filePattern="${baseDir}spacex_data/spacex_data-%i.log" append="true">
+            <PatternLayout pattern="%d - %m%n" />
+            <OnStartupTriggeringPolicy />
+            <SizeBasedTriggeringPolicy size="1000 MB" />
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+        
+        <RollingFile name="data" fileName="${baseDir}data/data.log" 
+            filePattern="${baseDir}data/data-%i.log" append="true">
+            <PatternLayout pattern="%d - %m%n" />
+            <OnStartupTriggeringPolicy />
+            <SizeBasedTriggeringPolicy size="1000 MB" />
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+        
+        <RollingFile name="alive" fileName="${baseDir}alive/alive.log" 
+        filePattern="${baseDir}alive/alive-%i.log" append="true">
+            <PatternLayout pattern="%d - %m%n" />
+            <OnStartupTriggeringPolicy />
+            <SizeBasedTriggeringPolicy size="1000 MB" />
+            <DefaultRolloverStrategy max="50"/>
+        </RollingFile>
+        
+        
+    </Appenders>
+    
+    
+    
+    <Loggers>
+    
+    
+       <Logger name="Data" additivity="true">
+       		<level value="ERROR" />
+            <AppenderRef ref="data" />
+       </Logger>
+       
+       <Logger name="SpaceX_Data" additivity="true">
+       		<level value="ERROR" />
+            <AppenderRef ref="spacex_data" />
+       </Logger>
+       
+       <Logger name="ALIVE" additivity="true">
+       		<level value="ERROR" />
+            <AppenderRef ref="alive" />
+       </Logger>
+       
+       
+    </Loggers>
+    
+    
+</Configuration>

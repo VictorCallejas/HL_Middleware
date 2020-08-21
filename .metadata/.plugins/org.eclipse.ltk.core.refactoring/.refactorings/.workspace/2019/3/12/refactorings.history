@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;hyperloop-tcp-receiver&apos;" deleteContents="false" description="Delete resource &apos;hyperloop-tcp-receiver&apos;" element1="/hyperloop-tcp-receiver" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1553340367394"/>
+</session>

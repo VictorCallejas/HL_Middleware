@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:batch="http://www.mulesoft.org/schema/mule/batch" xmlns:schedulers="http://www.mulesoft.org/schema/mule/schedulers" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:amqp="http://www.mulesoft.org/schema/mule/amqp"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:quartz="http://www.mulesoft.org/schema/mule/quartz" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:udp="http://www.mulesoft.org/schema/mule/udp" xmlns:vm="http://www.mulesoft.org/schema/mule/vm" xmlns:tcp="http://www.mulesoft.org/schema/mule/tcp"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.mulesoft.org/schema/mule/vm http://www.mulesoft.org/schema/mule/vm/current/mule-vm.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/tcp http://www.mulesoft.org/schema/mule/tcp/current/mule-tcp.xsd
+http://www.mulesoft.org/schema/mule/udp http://www.mulesoft.org/schema/mule/udp/current/mule-udp.xsd
+http://www.mulesoft.org/schema/mule/quartz http://www.mulesoft.org/schema/mule/quartz/current/mule-quartz.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/schedulers http://www.mulesoft.org/schema/mule/schedulers/current/mule-schedulers.xsd
+http://www.mulesoft.org/schema/mule/batch http://www.mulesoft.org/schema/mule/batch/current/mule-batch.xsd">
+	
+	<context:property-placeholder location="hyperloop.properties" />
+    <udp:connector name="UDP" validateConnections="true" doc:name="UDP" timeout="1" dynamicNotification="true"/>
+    <amqp:connector name="AMQP_0_9_Connector" 
+	    validateConnections="true" 
+	    port="${rabbitmq.serverPort}" 
+	    username="${rabbitmq.user}" 
+	    password="${rabbitmq.password}"  
+	    doc:name="AMQP-0-9 Connector" host="${rabbitmq.serverURL}"/>
+
+ 
+ 
+	<flow name="BigDataFlow" >
+        <poll doc:name="Poll">
+            <fixed-frequency-scheduler frequency="5" />
+            <component class="com.hyperloop.UDP.UDP" doc:name="UDP Server"/>
+        </poll>
+        <logger message="#[payload]" level="ERROR" category="Data" doc:name="DATA-LOGGER"/>
+
+		<amqp:outbound-endpoint queueName="${rabbitmq.topicData}" 
+	         
+	        queueDurable="true" 
+	        responseTimeout="10000" 
+	         
+	        connector-ref="AMQP_0_9_Connector" 
+	        doc:name="Send to RabbitMQ" />
+
+	</flow>
+
+	
+    <flow name="keepAlive">
+        <poll doc:name="Poll">
+            <fixed-frequency-scheduler frequency="75"/>
+            <component class="com.hyperlopp.UDPAlive.keepAlive" doc:name="Java"/>
+        </poll>
+
+        <set-payload value="1" doc:name="send Alive"/>
+        <logger message="#[payload]" level="ERROR" category="ALIVE" doc:name="ALIVE-LOGGER"/>
+        <amqp:outbound-endpoint doc:name="Send to RabbitMQ" 
+        	 
+        	queueName="${rabbitmq.topicAlive}" 
+        	responseTimeout="10000" 
+        	connector-ref="AMQP_0_9_Connector"  queueDurable="true" />
+
+        <exception-strategy ref="POD_CONNECTION_LOST" doc:name="Reference Exception Strategy"/>
+    </flow>
+    <catch-exception-strategy name="POD_CONNECTION_LOST">
+
+        <set-payload value=" 0" doc:name="send NOT Alive"/>
+        <logger message="#[payload]" level="ERROR" category="ALIVE" doc:name="ALIVE-LOGGER"/>
+			<amqp:outbound-endpoint doc:name="Send to RabbitMQ" 
+			        	 
+			        	 
+			        	queueName="${rabbitmq.topicAlive}" 
+			        	responseTimeout="10000" 
+			        	connector-ref="AMQP_0_9_Connector"  queueDurable="true" />
+        <component class="com.hyperlopp.UDPAlive.keepAliveRecovery" doc:name="RECOVERY"/>
+    </catch-exception-strategy>
+    <flow name="SpaceXFlow">
+        <poll doc:name="Poll">
+            <fixed-frequency-scheduler frequency="5"/>
+            <component class="com.hyperloop.UDPSpaceX.UDPSpaceX" doc:name="UDP Server"/>
+        </poll>
+        <logger message="#[payload]" level="ERROR" category="SpaceX_Data" doc:name="SPACEX-LOGGER"/>
+        <component class="com.hyperloop.UDPSpaceX.SpaceXTransfomer" doc:name="Prepate and Send to SpaceX"/>
+    </flow>
+
+    
+</mule>

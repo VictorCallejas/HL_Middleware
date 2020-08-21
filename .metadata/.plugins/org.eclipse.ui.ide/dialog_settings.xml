@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\repos\middleware"/>
+	</list>
+	<list key="installedFeatures">
+		<item value="org.eclipse.draw2d:3.10.100.201606061308"/>
+		<item value="org.eclipse.emf.common:2.13.0.v20170609-0707"/>
+		<item value="org.eclipse.emf.ecore:2.13.0.v20170609-0707"/>
+		<item value="org.eclipse.gef:3.11.0.201606061308"/>
+		<item value="org.eclipse.help:2.2.102.v20171130-0510"/>
+		<item value="org.eclipse.jdt:3.13.2.v20171130-0906"/>
+		<item value="org.eclipse.pde:3.13.2.v20171130-0510"/>
+		<item value="org.eclipse.platform:4.7.2.v20171130-0510"/>
+		<item value="org.eclipse.rcp:4.7.2.v20171130-0510"/>
+		<item value="org.eclipse.wst.jsdt.chromium.debug.feature:0.6.0.v201705091354"/>
+		<item value="org.eclipse.wst.jsdt.feature:2.1.0.v201706011953"/>
+		<item value="org.eclipse.wst.json_ui.feature:1.1.1.v201707252002"/>
+		<item value="org.eclipse.wst.web_ui.feature:3.9.1.v201711152154"/>
+		<item value="org.eclipse.wst.xml_ui.feature:3.9.1.v201707252002"/>
+		<item value="org.eclipse.xsd.edit:2.9.0.v20170609-0928"/>
+		<item value="org.eclipse.xsd:2.13.0.v20170609-0928"/>
+		<item value="org.mule.tooling.extension.server.4.1.4.ee:7.3.2.201902011858"/>
+		<item value="org.mule.tooling.munit.extension:2.3.2.201901151740"/>
+		<item value="org.mule.tooling.studio:7.3.2.201902012049"/>
+		<item value="org.mule.tooling:7.3.2.201902012049"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="662" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="452" key="DIALOG_HEIGHT"/>
+		<item value="629" key="DIALOG_X_ORIGIN"/>
+		<item value="214" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+	</section>
+</section>
